@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task2</title>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        }
+        body{
+            background:rgb(122, 122, 122);
+        }
+        .container{
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .galeria{
+            width: 85%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+        .obrazek{
+            background-image: url(../Images/post.jpg);
+            width: 20vw;
+            padding: 10px;
+            height: 15vh;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="galeria">
+            <div class="obrazek"></div>
+            <div class="obrazek"></div>
+            <div class="obrazek"></div>
+            <div class="obrazek"></div>
+            <div class="obrazek"></div>
+            
+        </div>
+    </div>
+</body>
+</html>

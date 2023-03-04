@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Poradnik Do FlexBox-a</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <section class="container">
+        
+        <div class="example" id="odstep">
+            <p class="naglowek">FlexBox - wstęp - Interaktywny Poradnik</p>
+            
+            <p class="opis">
+                FlexBox , miło brzmiąca nazwa kryjąca pod sobą jedno z najlepszych 
+                rozwiązań dotyczących Responsywności oraz układu elementów na stronach.
+                Pozornie kilka atrybutów które pomagają ułożyć elementy na stronie,
+                lecz zawierające wiele różnych możliwośći.
+                Ta strona pomoże ci zrozumieć podstawy FlexBox-a. 
+                FlexBox ma jeszcze kilka zastosowań które nie są tu wymienione
+                Takich jak "flex-grow" , "self-grow" , "order". 
+                je ciężko wytłumaczyć zwykłym tekstem i przykładem 
+                aby je poznać i poćwiczyć polecam wejść na stronę poniżej
+            </p>
+            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="blanc">Całkowity Poradnik FlexBoxa</a>
+            
+            <p class="opis">
+                Teraz już zapraszam do nauki i testowania FlexBox-a i jego atrybutów.
+                Powodzonka:
+                PS: Atrybuty można łączyć a na dole jest swojego rodzaju "piaskownica".
+            </p>
+                
+            
+        </div>
+        <div class="example" data-aos="fade-right" data-aos-duration="2500">
+            <p class="naglowek">Flex-direction:</p>
+            <p class="opis">
+                Atrybut flex direction służy głownie do ustawnia elementów
+                w danej kolejności, przykładowo domyślnie "flex-direction: row;"
+                ustawia elementy od lewej do prawej, a z kolei "flex-direction: column;"
+                ustawia elementy od góry do dołu.
+        </p>
+        <div class="linia">
+            <div class="przyciski">
+                <button onclick="direction(1)">row = od lewej do prawej</button>
+                <button onclick="direction(2)">column = od góry do dołu</button>
+            </div>
+            <div class="przyciski">
+                <button onclick="direction(3)">row-reverse = od prawej do lewej</button>
+                <button onclick="direction(4)">column-reverse = od dołu do góry</button>
+            </div>
+            <div class="przyciski">
+                <button onclick="addBox(1)">Dodaj Box-a</button>
+                <button onclick="delBox(1)">Usuń Box-a</button>
+            </div>
+            
+        </div>
+        <p id="typeDirection" class="opis">aktualnie flex-direction : row</p>
+            <div id="workspace1" class="workspace" >
+                <div id="box11" class="box" onclick="boxActive(11)">Box1</div>
+                <div id="box12" class="box" onclick="boxActive(12)">Box2</div>
+                <div id="box13" class="box" onclick="boxActive(13)">Box3</div>
+                <div id="box14" class="box" onclick="boxActive(14)">Box4</div>
+            </div>
+            
+        </div>
+
+        <div class="example" data-aos="zoom-in" data-aos-duration="2500">
+            <p class="naglowek">Flex-wrap:</p>
+            <p class="opis">
+                Flex-wrap służy do ustawiania "zawijania"
+                elementów gdy skończy się miejsce w lini
+                "no-wrap" wyłącza zawijanie przez co elementy zostają w 1 lini
+                "wrap" włącza zawijanie przez co elementy zawijają się wedle indexu (kolejnością wpisania)
+                "wrap-reverse" działa tak samo jak wrap ale zamiast od poczatku zawija nam od końca
+                przykłady poniżej:
+                PS: potestuj szerokość 
+                Pamietaj że pomimo zawiajnia elementów, może się zdarzyć tak że nawet mimo włączonego zawijania
+                elementy zaczną się rozjeżdzać przez wystąpienie za wielu elementów w danym miejscu.
+                przykładowo po dodaniu za wielu boxów do diva o dajmy na to 100x400px one zaczną nam wyjeżdzać poza niego i zmieniać swój kształt
+                bo algorytm będzie starał się je zmieścić.
+            </p>
+            <div class="linia">
+            <div class="przyciski">
+                <button onclick="wrap(1)">nowrap = brak zawijania</button>
+                <button onclick="wrap(2)">wrap = zawijanie</button>
+                <button onclick="wrap(3)">wrap-reverse = zawijanie odwrotne</button>
+            </div>
+            <div class="przyciski">
+                <button onclick="wrapWorkspaceWidth('90vw')">szerokość : domyślna</button>
+                <button onclick="wrapWorkspaceWidth('100px')">szerokość : 100px</button>
+                <button onclick="wrapWorkspaceWidth('200px')">szerokość : 200px</button>
+                <button onclick="wrapWorkspaceWidth('400px')">szerokość : 400px</button>
+                <button onclick="wrapWorkspaceWidth('500px')">szerokość : 500px</button>
+            </div>
+            <div class="przyciski">
+                <button onclick="addBox(2)">Dodaj Box-a</button>
+                <button onclick="delBox(2)">Usuń Box-a</button>
+            </div>
+            
+        </div>
+        <p id="typeWrap" class="opis">aktualnie flex-wrap : nowrap</p> 
+            <p id="wrapWidth" class="opis">aktualna szerokość : 90vw</p>
+            <div id="workspace2" class="workspace" >
+                <div id="box21" class="box" onclick="boxActive(21)">Box1</div>
+                <div id="box22" class="box" onclick="boxActive(22)">Box2</div>
+                <div id="box23" class="box" onclick="boxActive(23)">Box3</div>
+                <div id="box24" class="box" onclick="boxActive(24)">Box4</div>
+            </div>
+            
+        
+        </div>
+
+        <div class="example" data-aos="fade-right" data-aos-duration="2500">
+            <p class="naglowek">Justify-content:</p>
+            <p class="opis">
+                Justify-content służy przedewszystkim do ustawiania
+                elementów w lini poziomej 
+                przykładowo i domyślnie "start" ustawia nam elementy do prawej
+                "center" ustawia elementy w środku
+                "end" ustawia elementy po prawej
+                a "space-between" ustawia elementy pomiędzy (dzieli przestrzeń na ilość 
+                box-ów i rozstawia je po lewej w środku i po prawej)
+                "space-around" ustawia elementy z kolei tak jak "space-between" ale 
+                daje nam dodatkową przestrzeń po bokach, 
+                oraz "space-evenly" daje to samo ale wiecej po bokach.
+            </p>
+            <div class="linia">
+            <div class="przyciski">
+                <button onclick="content(1)">start = do lewej</button>
+                <button onclick="content(2)">center = w środku</button>
+                <button onclick="content(3)">end = do prawej</button>
+            </div>
+            <div class="przyciski">
+                <button onclick="content(4)">space-between = po bokach i w środku</button>
+                <button onclick="content(5)">space-around = -||- z przestrzeniami</button>
+                <button onclick="content(6)">space-evenly = -||- wiecej przestrzeni</button>
+            </div>
+            <div class="przyciski">
+                <button onclick="addBox(3)">Dodaj Box-a</button>
+                <button onclick="delBox(3)">Usuń Box-a</button>
+            </div>
+        </div>
+        <p id="typeContent" class="opis">aktualnie Justify-content : start</p>
+            <div id="workspace3" class="workspace"  >
+                <div id="box31" class="box" onclick="boxActive(31)">Box1</div>
+                <div id="box32" class="box" onclick="boxActive(32)">Box2</div>
+                <div id="box33" class="box" onclick="boxActive(33)">Box3</div>
+            </div>
+           
+            
+        </div>
+
+        <div class="example" data-aos="zoom-in" data-aos-duration="2500">
+            <p class="naglowek">Align-items:</p>
+            <p class="opis">
+                Align-items służy do ustawiania elementów w lini pionowej
+                "flex-start"  ustawia elementy od góry do dołu
+                "flex-end" ustawia elementy od dołu do góry
+                "center" daje po środku
+                są także dodatkowe ale to już polecam do samo nauki.
+                PS: potestuj wyskość
+            </p>
+            <div class="linia">
+            <div class="przyciski">
+                <button onclick="align(1)">flex-start = do góry</button>
+                <button onclick="align(3)">center = po środku</button>
+                <button onclick="align(2)">flex-end = do dołu</button>
+            </div>
+            <div class="przyciski">
+                <button onclick="alignWorkspaceHeight('auto')">wyskość : domyślna</button>
+                <button onclick="alignWorkspaceHeight('100px')">wysokość : 100px</button>
+                <button onclick="alignWorkspaceHeight('200px')">wysokość : 200px</button>
+                <button onclick="alignWorkspaceHeight('400px')">wysokość : 400px</button>
+                <button onclick="alignWorkspaceHeight('500px')">wysokość : 500px</button>
+            </div>
+            <div class="przyciski">
+                <button onclick="addBox(4)">Dodaj Box-a</button>
+                <button onclick="delBox(4)">Usuń Box-a</button>
+            </div>
+        </div>
+        <p id="typeAlignItems" class="opis">aktualnie Align-items : stretch</p>
+        <p id="typeAlignHeight" class="opis">aktualnie Height : auto</p>
+            <div id="workspace4" class="workspace"  >
+                <div id="box41" class="box" onclick="boxActive(41)">Box1</div>
+                <div id="box42" class="box" onclick="boxActive(42)">Box2</div>
+                <div id="box43" class="box" onclick="boxActive(43)">Box3</div>
+            </div>
+            
+        </div>
+        
+
+        <div class="example" data-aos="fade-down" data-aos-duration="2500">
+            <p class="naglowek">Piaskownica</p>
+            <p class="opis">
+                Tutaj możesz potestować wiele ustawień naraz
+            </p>
+            <div class="linia">
+            <div class="przyciski">
+                <button onclick="sandboxDirection(1)">flex-direction: row;</button>
+                <button onclick="sandboxDirection(2)">flex-direction: column;</button>
+                <button onclick="sandboxDirection(3)">flex-direction: row-reverse;</button>
+                <button onclick="sandboxDirection(4)">flex-direction: column-reverse;</button>
+            </div>
+            <div class="przyciski">
+                <button onclick="sandboxWrap(1)">flex-wrap: nowrap;</button>
+                <button onclick="sandboxWrap(2)">flex-wrap: wrap;</button>
+                <button onclick="sandboxWrap(3)">flex-wrap: wrap-reverse;</button>
+            </div>
+            <div class="przyciski">
+                <button onclick="sandboxContent(1)">Justify-content: start;</button>
+                <button onclick="sandboxContent(2)">Justify-content: center;</button>
+                <button onclick="sandboxContent(3)">Justify-content: end;</button>
+          
+                <button onclick="sandboxContent(4)">Justify-content: space-between;</button>
+                <button onclick="sandboxContent(5)">Justify-content: space-around;</button>
+                <button onclick="sandboxContent(6)">Justify-content: space-evenly;</button>
+            </div>
+            <div class="przyciski">
+                <button onclick="sandboxAlign(1)">Align-items: flex-start;</button>
+                <button onclick="sandboxAlign(3)">Align-items: center;</button>
+                <button onclick="sandboxAlign(2)">Align-items: flex-end;</button>
+            </div>
+            <div class="przyciski">
+                <button onclick="sandboxWorkspaceWidth('90vw')">szerokość : domyślna</button>
+                <button onclick="sandboxWorkspaceWidth('100px')">szerokość : 100px</button>
+                <button onclick="sandboxWorkspaceWidth('200px')">szerokość : 200px</button>
+                <button onclick="sandboxWorkspaceWidth('400px')">szerokość : 400px</button>
+                <button onclick="sandboxWorkspaceWidth('500px')">szerokość : 500px</button>
+            </div>
+            <div class="przyciski">
+                <button onclick="sandboxWorkspaceHeight('auto')">wyskość : domyślna</button>
+                <button onclick="sandboxWorkspaceHeight('100px')">wysokość : 100px</button>
+                <button onclick="sandboxWorkspaceHeight('200px')">wysokość : 200px</button>
+                <button onclick="sandboxWorkspaceHeight('400px')">wysokość : 400px</button>
+                <button onclick="sandboxWorkspaceHeight('500px')">wysokość : 500px</button>
+            </div>
+            <div class="przyciski">
+                <button onclick="addBox(5)">Dodaj Box-a</button>
+                <button onclick="delBox(5)">Usuń Box-a</button>
+            </div>
+            </div>
+                
+                <p id="typeSandboxDirection" class="opis">aktualnie flex-direction : row</p>
+                <p id="typeSandboxWrap" class="opis">aktualnie flex-wrap : nowrap</p>
+                <p id="typeSandboxContent" class="opis">aktualnie Justify-content : start</p>
+            
+                <p id="typeSandboxItems" class="opis">aktualnie Align-items : stretch</p>
+                <p id="typeSandboxWidth" class="opis">aktualna szerokość : 90vw</p>
+                <p id="typeSandboxHeight" class="opis">aktualna Wysokość : auto</p>
+            
+            <div id="workspace5" class="workspace"  >
+                <div id="box51" class="box" onclick="boxActive(51)">Box1</div>
+                <div id="box52" class="box" onclick="boxActive(52)">Box2</div>
+                <div id="box53" class="box" onclick="boxActive(53)">Box3</div>
+                <div id="box54" class="box" onclick="boxActive(54)">Box4</div>
+                <div id="box55" class="box" onclick="boxActive(55)">Box5</div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="zadania">
+        
+
+        <div class="example"  data-aos="fade-down" data-aos-duration="2500">
+            <p class="naglowek">Zadanie 1</p>
+            <p class="opis">
+                Stwórz Mini stronę z postami,
+                ustaw aby były od siebie odsunięte oraz od ścian strony a w dodatku
+                gdy będzie ich za dużo w 1 lini wprowadź zawijanie. Zadanko na 30minutek. Wartości :
+                Szerokość Posta : 30vw;
+                Szerokość tekstu : 60%;
+                Szerokość obrazka : 60%;
+                Grubość tekstu : 1.2rem;
+                Post padding : 10px;
+
+            </p>
+            <p class="opis">
+                Wzór:
+            </p>
+
+            <a href="./Tasks/task1.png" target="blanc"><img src="./Tasks/task1.png" alt="Zdjęcie do zadania 1" class="obrazekZadanko"></a>
+
+            <p class="opis">
+                Podpowiedź: Użyj Justify-content, flex-direction, flex-wrap, align-items.
+            </p>
+          
+        </div>
+        <div class="example"  data-aos="fade-down" data-aos-duration="2500">
+            <p class="naglowek">Zadanie 2</p>
+            <p class="opis">
+                Wykonaj Mini stronę z użyciem flexbox-a od galerii.
+                Obrazki mają zajmować 20vw i 15vh a do tego mają się skalować [Spróbuj usatwić zdjecie jako tło diva i na zasadzie skalowania i ustawiania tła].
+                oraz box galerii 80% width.Gap 20px;
+            </p>
+            <p class="opis">
+                Wzór:
+            </p>
+
+            <a href="./Tasks/task2.PNG" target="blanc"><img src="./Tasks/task2.PNG" alt="Zdjęcie do zadania 2" class="obrazekZadanko"></a>
+
+            <p class="opis">
+                Podpowiedź: Użyj Justify-content, flex-direction, flex-wrap, background-size, background-position.
+            </p>
+          
+        </div>
+
+        </section>
+        <script>
+            AOS.init();
+        </script>
+    <script src="./script.js"></script>
+</body>
+</html>

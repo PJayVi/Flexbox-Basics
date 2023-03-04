@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+body::-webkit-scrollbar-thumb {
+    background: #ff9900;
+    border-radius: 8px;
+} 
+body::-webkit-scrollbar-thumb:hover {
+    background: #c57d10;
+}
+
+html,
+body{
+    background: #494a4b;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+.zadania{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.example{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.naglowek{
+    color: #c57d10; 
+    font-size: 2rem;
+    padding: 10px 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.opis{
+    color:rgb(172, 184, 184);
+    font-size: 1.2rem;
+    width: 70%;
+}
+
+button{
+    background:#c57d10;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    color: black;
+    font-size: 1.2rem;
+    transition: 0.5s;
+}
+button:hover {
+    
+    transition: 0.5s;
+    filter: drop-shadow(0 0 2px  rgb(172, 184, 184))drop-shadow(0 0 5px  rgb(172, 184, 184))drop-shadow(0 0 15px  rgb(172, 184, 184));
+}
+button:active{
+   color: rgb(172, 184, 184);
+    transition: 0.5s;
+    filter: drop-shadow(0 0 2px  rgb(172, 184, 184))drop-shadow(0 0 5px  rgb(172, 184, 184))drop-shadow(0 0 15px  rgb(172, 184, 184));
+}
+.linia{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.przyciski {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(172, 184, 184);
+    padding: 10px;
+}
+.workspace{
+    width: 90vw;
+    background-color: rgb(119, 119, 119);
+    display: flex;
+    padding: 10px;
+    transition: 0.5s;
+}
+.box {
+    width: 50px;
+    height: 50px;
+    background: #c57d10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border: 1px solid black;
+    margin: 5px;
+    border-radius: 20%;
+}
+.box:hover{
+    transition: 0.5s;
+    filter: drop-shadow(0 0 2px  rgb(184, 184, 184))drop-shadow(0 0 5px  rgb(184, 184, 184))drop-shadow(0 0 15px  rgb(184, 184, 184));
+}
+.active{
+    color:rgb(184, 184, 184) ;
+    background: #ff9900;
+    transition: 0.5s;
+    filter: drop-shadow(0 0 2px  #c57d10)drop-shadow(0 0 5px  #c57d10)drop-shadow(0 0 15px  #c57d10);
+}
+.active:hover{
+    color: white;
+    background: #ffa115;
+    transition: 0.5s;
+    filter: drop-shadow(0 0 2px  #c57d10)drop-shadow(0 0 5px  #c57d10)drop-shadow(0 0 15px  #c57d10);
+}
+a{
+    background:#c57d10;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    color: black;
+    font-size: 1.2rem;
+    transition: 0.5s;
+    text-decoration: none;
+    border-radius: 16px;
+
+}
+
+
+a:hover {
+    
+    transition: 0.5s;
+    filter: drop-shadow(0 0 2px  rgb(172, 184, 184))drop-shadow(0 0 5px  rgb(172, 184, 184))drop-shadow(0 0 15px  rgb(172, 184, 184));
+}
+a:active{
+   color: rgb(172, 184, 184);
+    transition: 0.5s;
+    filter: drop-shadow(0 0 2px  rgb(172, 184, 184))drop-shadow(0 0 5px  rgb(172, 184, 184))drop-shadow(0 0 15px  rgb(172, 184, 184));
+}
+#odstep{
+    padding: 20px;
+}
+
+.obrazekZadanko{
+    width: 10vw;
+    height: auto;
+}
+
